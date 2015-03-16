@@ -11,7 +11,7 @@ import android.os.Handler;
 public class FirstActivity extends Activity {
 
 
-    private final int splash_delay=1500;
+    private final int splash_delay=1000;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
