@@ -5,7 +5,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@android:color/white"
-                android:id="@+id/rl">
+                android:id="@+id/rl" android:weightSum="1">
     <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
             android:id="@+id/tabs"
             android:layout_width="fill_parent"
@@ -23,22 +23,28 @@
     <android.support.v4.view.ViewPager
             android:id="@+id/vpage"
             android:layout_width="match_parent"
-            android:layout_height="884dp"
+            android:layout_height="721dp"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             />
-<!--
-
     <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="راهنما"
-            android:textColor="@android:color/black"
-            android:background="@android:color/holo_blue_bright"
-            android:id="@+id/help"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true" android:layout_toLeftOf="@+id/rss"/>
-    !-->
+            android:id="@+id/helpbutton"/>
+    <!--
+
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="راهنما"
+                android:textColor="@android:color/black"
+                android:background="@android:color/holo_blue_bright"
+                android:id="@+id/help"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true" android:layout_toLeftOf="@+id/rss"/>
+        !-->
     <!--<Button
 
             android:textColor="@android:color/black"

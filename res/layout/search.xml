@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:id="@+id/listView"
-            android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText" android:layout_alignParentRight="true"/>
-    <EditText android:id="@+id/editText" android:layout_width="match_parent"
-              android:layout_height="wrap_content" android:hint="دنبال چی میگردی؟"
-              android:textColorHint="@android:color/black" android:textColor="@android:color/black"
-               android:layout_alignParentLeft="true"/>
-</RelativeLayout>
+<LinearLayout android:gravity="right" android:layout_gravity="right" android:orientation="vertical"
+              android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="top|center" android:layout_gravity="top" android:id="@+id/linearLayout1"
+                  android:background="@android:color/white" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:layout_weight="0.02">
+        <ImageView android:id="@+id/imageView8" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginLeft="9.0dip" android:layout_marginTop="5.0dip"
+                   android:layout_marginBottom="5.0dip" android:src="@drawable/bl"/>
+        <EditText android:textColor="@android:color/black" android:id="@+id/editText1" android:background="@drawable/bb"
+                  android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_marginTop="5.0dip"
+                  android:layout_marginBottom="5.0dip" android:layout_weight="1.0" android:hapticFeedbackEnabled="true">
+            <requestFocus/>
+        </EditText>
+        <ImageView android:id="@+id/imageView7" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip"
+                   android:layout_marginBottom="5.0dip" android:src="@drawable/br"/>
+        <ImageView android:layout_gravity="top" android:id="@+id/imageView1" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:layout_marginTop="15.0dip"
+                   android:layout_marginRight="5.0dip" android:src="@drawable/find"/>
+    </LinearLayout>
+    <ListView android:layout_gravity="right" android:id="@+id/list" android:layout_width="fill_parent"
+              android:layout_height="177.0dip" android:textFilterEnabled="true" android:layout_weight="1.02"/>
+    <TextView android:gravity="center_vertical" android:layout_gravity="top|center" android:id="@+id/empty"
+              android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:text="@string/noCompanyFound"/>
+    //style="@style/fontSize"
+
+
+
+</LinearLayout>

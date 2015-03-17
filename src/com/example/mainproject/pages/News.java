@@ -1,10 +1,11 @@
-package com.example.mainproject;
+package com.example.mainproject.pages;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.example.mainproject.R;
 
 /**
  * Created by MOHAMMAD on 16/03/2015.
