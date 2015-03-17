@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import com.example.mainproject.Helpbutton;
 import com.example.mainproject.R;
 
 /**
@@ -18,6 +19,13 @@ public class About extends Activity {
         super.onCreate(save);
         setContentView(R.layout.about);
         textView = (TextView) findViewById(R.id.aboutbutton);
+        Button helpbutton = (Button) findViewById(R.id.helpbutton);
+        helpbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Helpbutton.
+            }
+        });
     }
 
 /*

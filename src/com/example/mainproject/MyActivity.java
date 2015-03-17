@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentActivity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Button;
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
 
@@ -21,6 +23,7 @@ public class MyActivity extends FragmentActivity {
     EditText editText;
     TextView textView;
 */
+    Button helpButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,14 @@ public class MyActivity extends FragmentActivity {
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabs.setViewPager(myPager);
 
+        helpButton = (Button) findViewById(R.id.helpbutton);
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 /*
         search = (Button) findViewById(R.id.search);
@@ -64,7 +75,7 @@ public class MyActivity extends FragmentActivity {
             public void onClick(View view) {
 
 
-                NoteDialogWin shareWin = new NoteDialogWin(MyActivity.this);
+                com.example.mainproject.NoteDialogWin shareWin = new com.example.mainproject.NoteDialogWin(MyActivity.this);
 
                 shareWin.setCanceledOnTouchOutside(false);
                 shareWin.show();

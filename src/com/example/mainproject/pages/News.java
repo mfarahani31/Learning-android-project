@@ -39,7 +39,7 @@ public class News extends Activity{
             public void onClick(View view) {
 
 
-                NoteDialogWin shareWin = new NoteDialogWin(News.this);
+                com.example.mainproject.NoteDialogWin shareWin = new com.example.mainproject.NoteDialogWin(News.this);
 
                 shareWin.setCanceledOnTouchOutside(false);
                 shareWin.show();
