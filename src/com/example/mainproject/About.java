@@ -16,7 +16,7 @@ public class About extends Activity {
     public void onCreate(Bundle save){
         super.onCreate(save);
         setContentView(R.layout.about);
-        textView = (TextView) findViewById(R.id.button3);
+        textView = (TextView) findViewById(R.id.aboutbutton);
     }
 
 /*

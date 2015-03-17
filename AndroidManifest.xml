@@ -16,6 +16,6 @@
         <activity android:name=".About" android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".MyActivity"/>
         <activity android:name=".News"/>
-        <activity android:name=".Help"/>
+
     </application>
 </manifest>

@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res/com.example.mainproject"
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@android:color/white"
                 android:id="@+id/rl">
+    <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:background="#00A693"
+            android:focusable="false"
+            app:shouldExpand="true"
+
+            android:focusableInTouchMode="false"/>
+
+           <!-- app:dividerColor="#FFFFFF"
+
+            app:tabTextSize="16sp"-->
 
     <android.support.v4.view.ViewPager
             android:id="@+id/vpage"
             android:layout_width="match_parent"
             android:layout_height="884dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
             />
 <!--
 

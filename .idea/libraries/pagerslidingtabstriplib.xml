@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pagerslidingtabstriplib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../PagerSlidingTabStripLib/bin/pagerslidingtabstriplib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

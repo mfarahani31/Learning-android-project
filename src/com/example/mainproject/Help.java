@@ -1,3 +1,4 @@
+/*
 package com.example.mainproject;
 
 import android.app.Activity;
@@ -12,24 +13,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+*/
 /**
  * Created by MOHAMMAD on 15/03/2015.
- */
+ *//*
+
 public class Help extends Activity {
 
 
-   /* Context context = this;
+   */
+/* Context context = this;
     Button home;
     Button search;
-*/
+*//*
+
     TextView textView;
     public void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.help);
 
         textView= (TextView) findViewById(R.id.textView);
-        /*home = (Button) findViewById(R.id.home);
+        */
+/*home = (Button) findViewById(R.id.home);
         search= (Button) findViewById(R.id.srch);
+*//*
+
 */
 /*
         home.setOnClickListener(new View.OnClickListener() {
@@ -53,8 +61,10 @@ public class Help extends Activity {
 
 
 
-*/
+*//*
+
 
     }
 
 }
+*/

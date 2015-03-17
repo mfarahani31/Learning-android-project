@@ -2,16 +2,18 @@ package com.example.mainproject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.support.v4.app.FragmentActivity;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Toast;
 import android.view.View;
@@ -21,10 +23,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.v4.view.ViewPager;
+import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
 
-public class MyActivity extends Activity {
+public class MyActivity extends FragmentActivity {
     /**
      * Called when the activity is first created.
      */
@@ -41,10 +43,15 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        CustomPagerAdapter customPagerAdapter = new CustomPagerAdapter();
+        CustomPagerAdapter customPagerAdapter = new CustomPagerAdapter(getSupportFragmentManager());
         ViewPager myPager = (ViewPager) findViewById(R.id.vpage);
         myPager.setAdapter(customPagerAdapter);
-        myPager.setCurrentItem(0);
+        myPager.setCurrentItem(3);
+
+
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(myPager);
+
 
 /*
         search = (Button) findViewById(R.id.search);

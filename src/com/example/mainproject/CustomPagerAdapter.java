@@ -1,68 +1,45 @@
 package com.example.mainproject;
 
-import android.content.Context;
-import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
+import com.example.mainproject.R;
 
-public class CustomPagerAdapter extends PagerAdapter {
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
-    public Object instantiateItem(View collection, int position) {
 
-        LayoutInflater inflater = (LayoutInflater) collection.getContext()
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+public class CustomPagerAdapter extends FragmentStatePagerAdapter {
 
+    private final int PAGES = 4;
+    private String[] titles={"درباره ما", "اخبار", "جستجو","خانه"};
+
+    public CustomPagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int position) {
         int resId = 0;
         switch (position) {
-            case 0: {
-                resId = R.layout.home;
-                break;
-            }
-            case 1: {
-                resId = R.layout.search;
-                break;
-            }
-            case 2: {
-                resId = R.layout.about;
-                break;
-            }
-            case 3: {
-                resId = R.layout.news;
-                break;
-            }
-            /*case 4: {
-                resId = R.layout.;
-                break;
-            }*/
+            case 0:
+                return new TabFragment1();
+            case 1:
+                return new TabFragment2();
+            case 2:
+                return new TabFragment3();
+            case 3:
+                return new TabFragment4();
+            default:
+                throw new IllegalArgumentException("The item position should be less or equal to:" + PAGES);
+
+        }
+    }
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
         }
 
-        View view = inflater.inflate(resId, null);
-
-        ((ViewPager) collection).addView(view, 0);
-
-        return view;
+        @Override
+        public int getCount() {
+            return PAGES;
+        }
     }
-
-    @Override
-    public void destroyItem(View arg0, int arg1, Object arg2) {
-        ((ViewPager) arg0).removeView((View) arg2);
-    }
-
-    @Override
-    public boolean isViewFromObject(View arg0, Object arg1) {
-        return arg0 == ((View) arg1);
-
-    }
-
-    @Override
-    public Parcelable saveState() {
-        return null;
-    }
-
-    @Override
-    public int getCount() {
-        return 5;
-    }
-}
