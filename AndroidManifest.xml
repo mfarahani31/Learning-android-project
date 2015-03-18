@@ -14,7 +14,7 @@
         </activity>
 
         <activity android:name=".pages.About" android:theme="@android:style/Theme.Dialog"/>
-        <activity android:name=".MyActivity"/>
+        <activity android:name=".MyActivity"  android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".pages.News"/>
 
     </application>

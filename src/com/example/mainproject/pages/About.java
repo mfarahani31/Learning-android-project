@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-import com.example.mainproject.Helpbutton;
+
+import com.example.mainproject.NoteDialogWin;
 import com.example.mainproject.R;
 
 /**
@@ -23,7 +24,7 @@ public class About extends Activity {
         helpbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Helpbutton.
+
             }
         });
     }
