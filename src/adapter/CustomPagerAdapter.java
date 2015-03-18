@@ -2,6 +2,7 @@ package adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import com.example.mainproject.fragments.TabFragment1;
 import com.example.mainproject.fragments.TabFragment2;
@@ -9,7 +10,7 @@ import com.example.mainproject.fragments.TabFragment3;
 import com.example.mainproject.fragments.TabFragment4;
 
 
-public class CustomPagerAdapter extends FragmentStatePagerAdapter {
+public class CustomPagerAdapter extends FragmentPagerAdapter {
 
     private final int PAGES = 4;
     private String[] titles={"درباره ما", "اخبار", "جستجو","خانه"};

@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$USER_HOME$/Downloads/Compressed/source/Compressed.iml" filepath="$USER_HOME$/Downloads/Compressed/source/Compressed.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SlidingMenuWithViewpager-master/PagerSlidingTabStripLib/PagerSlidingTabStripLib.iml" filepath="$PROJECT_DIR$/../SlidingMenuWithViewpager-master/PagerSlidingTabStripLib/PagerSlidingTabStripLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SlidingMenuWithViewpager-master/SlidinMenuLib/SlidinMenuLib.iml" filepath="$PROJECT_DIR$/../SlidingMenuWithViewpager-master/SlidinMenuLib/SlidinMenuLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SlidingMenuWithViewpager-master/SlidingMenuWithViewPager/SlidingMenuWithViewPager.iml" filepath="$PROJECT_DIR$/../SlidingMenuWithViewpager-master/SlidingMenuWithViewPager/SlidingMenuWithViewPager.iml" />
       <module fileurl="file://$PROJECT_DIR$/mainproject.iml" filepath="$PROJECT_DIR$/mainproject.iml" />
     </modules>
   </component>

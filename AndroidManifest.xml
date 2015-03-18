@@ -13,10 +13,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".pages.About" android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".MyActivity"  android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".pages.News"/>
-        <activity android:name=".pages.Search" android:windowSoftInputMode="stateVisible"/>
+
+
 
     </application>
 </manifest>

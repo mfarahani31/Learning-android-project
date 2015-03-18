@@ -1,3 +1,4 @@
+/*
 package com.example.mainproject.pages;
 
 import android.app.Activity;
@@ -14,15 +15,17 @@ import com.example.mainproject.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+*/
 /**
  * Created by MOHAMMAD on 16/03/2015.
- */
+ *//*
+
 public class Search extends Activity {
 
-    public EditText searchbox;
+     EditText searchbox;
     ListView mainListView;
     Button searchbutton;
-    private ArrayAdapter<String> listAdapter;
+     ArrayAdapter<String> listAdapter;
 
     public void onCreate(Bundle s) {
         super.onCreate(s);
@@ -34,44 +37,52 @@ public class Search extends Activity {
         searchbutton = (Button) findViewById(R.id.searchboxbutton);
 
         //for hide keyboard
-
+        System.out.println("hellooo");
         imm.hideSoftInputFromWindow(searchbox.getWindowToken(), 0);
+        System.out.println("hellooo");
+
         mainListView = (ListView) findViewById(R.id.list);
 
         // Create and populate a List of planet names.
-       /* String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
-                "Jupiter", "Saturn", "Uranus", "Neptune"};
        */
+/* String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
+                "Jupiter", "Saturn", "Uranus", "Neptune"};
+       *//*
+
         final ArrayList planetList = new ArrayList();
         // planetList.addAll( Arrays.asList(planets) );
 
-       /* for (int i=0;i<planets.length;i++) {
+       */
+/* for (int i=0;i<planets.length;i++) {
             planetList.add(planets[i]);
             System.out.println("Hiiii ------  :  "+planetList.get(i));
-        }*/
+        }*//*
+
         // Create ArrayAdapter using the planet list.
         listAdapter = new ArrayAdapter(this, R.layout.listraw, planetList);
 
         // Add more planets. If you passed a String[] instead of a List<String>
         // into the ArrayAdapter constructor, you must not add more items.
         // Otherwise an exception will occur.
-     /*   listAdapter.add( "Ceres" );
+     */
+/*   listAdapter.add( "Ceres" );
         listAdapter.add( "Pluto" );
         listAdapter.add( "Haumea" );
         listAdapter.add( "Makemake" );
-        listAdapter.add( "Eris" );*/
+        listAdapter.add( "Eris" );*//*
+
 
         // Set the ArrayAdapter as the ListView's adapter.
         //  mainListView.setAdapter( listAdapter );
-
-searchbutton.setOnClickListener(new View.OnClickListener() {
+        System.out.println("hellooo");
+   searchbutton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         try {
 
             System.out.println("HI-------   :   " + searchbox.getText().toString());
             SQLiteDatabase database = openOrCreateDatabase("JOBS", MODE_PRIVATE, null);
-            Cursor cursor = database.rawQuery("SELECT ID,TEL,CELL,ADRESS,MAIL,JOB FROM T1 WHERE COMPANYNAME = " + searchbox.getText().toString() + ";", null);
+            Cursor cursor = database.rawQuery("SELECT ID,TEL,CELL,ADRESS,MAIL,JOB FROM JOBS WHERE COMPANYNAME = " + searchbox.getText().toString() + ";", null);
             //Cursor cursor = database.rawQuery("SELECT ID,NAME FROM T1 WHERE NAME = " + editTextName.getText().toString() +";", null);
             //cursor.moveToNext();
             //Toast.makeText(getApplicationContext(),cursor.getString(cursor.getColumnIndex("NAME")),Toast.LENGTH_SHORT).show();
@@ -105,4 +116,4 @@ searchbutton.setOnClickListener(new View.OnClickListener() {
 
     }
 });
-}}
+}}*/

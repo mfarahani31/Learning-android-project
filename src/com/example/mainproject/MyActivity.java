@@ -1,6 +1,8 @@
 package com.example.mainproject;
 
 import adapter.CustomPagerAdapter;
+import android.app.Activity;
+import android.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -28,6 +30,8 @@ public class MyActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        System.out.println("dfbdbgbsr");
+
         CustomPagerAdapter customPagerAdapter = new CustomPagerAdapter(getSupportFragmentManager());
         ViewPager myPager = (ViewPager) findViewById(R.id.vpage);
         myPager.setAdapter(customPagerAdapter);
@@ -48,7 +52,7 @@ public class MyActivity extends FragmentActivity {
 
         Database database = new Database();
         database.insert(1,"elenoon",66538653,935409692,"sattaarkhan","mfarahani31@yahoo.com","develop");
-
+        System.out.println("dfbdbgbsr");
 /*
         search = (Button) findViewById(R.id.search);
         help = (Button) findViewById(R.id.help);

@@ -17,7 +17,7 @@ public class Database extends Activity {
         try {
 
             SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("JOBS", MODE_PRIVATE, null);
-            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS JOBS(ID INT(3),COMPANYNAME VARCHAR,TEL LONG(8),CELL LONG(12),ADRESS VARCHAR," +
+            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS T1(ID INT(3),COMPANYNAME VARCHAR,TEL INT(8),CELL INT(12),ADRESS VARCHAR," +
                     "MAIL VARCHAR,JOB VARCHAR);");
 
             ContentValues values = new ContentValues();
@@ -29,7 +29,7 @@ public class Database extends Activity {
             values.put("MAIL", mail);
             values.put("JOB", job);
 
-            sqLiteDatabase.insert("JOBS", null, values);
+            sqLiteDatabase.insert("T1", null, values);
            // Toast.makeText(getApplicationContext(), "Row Insert", Toast.LENGTH_LONG).show();
         } catch (Exception ex) {
             //Toast.makeText(getApplicationContext(), ex + "", Toast.LENGTH_LONG).show();
