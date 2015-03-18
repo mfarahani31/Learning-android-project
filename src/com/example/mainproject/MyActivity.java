@@ -46,6 +46,9 @@ public class MyActivity extends FragmentActivity {
             }
         });
 
+        Database database = new Database();
+        database.insert(1,"elenoon",66538653,935409692,"sattaarkhan","mfarahani31@yahoo.com","develop");
+
 /*
         search = (Button) findViewById(R.id.search);
         help = (Button) findViewById(R.id.help);

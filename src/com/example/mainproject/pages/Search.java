@@ -5,6 +5,7 @@ import android.app.Service;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
@@ -18,67 +19,90 @@ import java.util.Arrays;
  */
 public class Search extends Activity {
 
-   public EditText searchbox ;
+    public EditText searchbox;
     ListView mainListView;
     Button searchbutton;
-    private ArrayAdapter<String> listAdapter ;
-    public void onCreate(Bundle s){
+    private ArrayAdapter<String> listAdapter;
+
+    public void onCreate(Bundle s) {
         super.onCreate(s);
         setContentView(R.layout.search);
 
-        InputMethodManager imm = (InputMethodManager)this.getSystemService(Service.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Service.INPUT_METHOD_SERVICE);
 
-     searchbox = (EditText) findViewById(R.id.searchbox);
+        searchbox = (EditText) findViewById(R.id.searchbox);
+        searchbutton = (Button) findViewById(R.id.searchboxbutton);
 
         //for hide keyboard
 
         imm.hideSoftInputFromWindow(searchbox.getWindowToken(), 0);
-        mainListView = (ListView) findViewById( R.id.list );
+        mainListView = (ListView) findViewById(R.id.list);
 
         // Create and populate a List of planet names.
-        String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
+       /* String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
                 "Jupiter", "Saturn", "Uranus", "Neptune"};
-        ArrayList<String> planetList = new ArrayList<String>();
-        planetList.addAll( Arrays.asList(planets) );
+       */
+        final ArrayList planetList = new ArrayList();
+        // planetList.addAll( Arrays.asList(planets) );
 
+       /* for (int i=0;i<planets.length;i++) {
+            planetList.add(planets[i]);
+            System.out.println("Hiiii ------  :  "+planetList.get(i));
+        }*/
         // Create ArrayAdapter using the planet list.
-        listAdapter = new ArrayAdapter<String>(this, R.layout.listraw, planetList);
+        listAdapter = new ArrayAdapter(this, R.layout.listraw, planetList);
 
         // Add more planets. If you passed a String[] instead of a List<String>
         // into the ArrayAdapter constructor, you must not add more items.
         // Otherwise an exception will occur.
-        listAdapter.add( "Ceres" );
+     /*   listAdapter.add( "Ceres" );
         listAdapter.add( "Pluto" );
         listAdapter.add( "Haumea" );
         listAdapter.add( "Makemake" );
-        listAdapter.add( "Eris" );
+        listAdapter.add( "Eris" );*/
 
         // Set the ArrayAdapter as the ListView's adapter.
-        mainListView.setAdapter( listAdapter );
+        //  mainListView.setAdapter( listAdapter );
+
+searchbutton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        try {
+
+            System.out.println("HI-------   :   " + searchbox.getText().toString());
+            SQLiteDatabase database = openOrCreateDatabase("JOBS", MODE_PRIVATE, null);
+            Cursor cursor = database.rawQuery("SELECT ID,TEL,CELL,ADRESS,MAIL,JOB FROM T1 WHERE COMPANYNAME = " + searchbox.getText().toString() + ";", null);
+            //Cursor cursor = database.rawQuery("SELECT ID,NAME FROM T1 WHERE NAME = " + editTextName.getText().toString() +";", null);
+            //cursor.moveToNext();
+            //Toast.makeText(getApplicationContext(),cursor.getString(cursor.getColumnIndex("NAME")),Toast.LENGTH_SHORT).show();
+            String row = "";
+            while (cursor.moveToNext()) {
+                //String companyname = cursor.getString(cursor.getColumnIndex("COMPANYNAME"));
+                int id = cursor.getInt(cursor.getColumnIndex("ID"));
+                String job = cursor.getString(cursor.getColumnIndex("JOB"));
+                String mail = cursor.getString(cursor.getColumnIndex("MAIL"));
+                String adress = cursor.getString(cursor.getColumnIndex("ADRESS"));
+                long tel = cursor.getInt(cursor.getColumnIndex("TEL"));
+                long cell = cursor.getInt(cursor.getColumnIndex("CELL"));
 
 
-    searchbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    SQLiteDatabase database = openOrCreateDatabase("JOBS", MODE_PRIVATE, null);
-                    Cursor cursor = database.rawQuery("SELECT COMPANYNAME,TEL,CELL,ADRESS,MAIL,JOB FROM T1 WHERE NAME = " + searchbox.toString() + ";", null);
-                    //Cursor cursor = database.rawQuery("SELECT ID,NAME FROM T1 WHERE NAME = " + editTextName.getText().toString() +";", null);
-                    //cursor.moveToNext();
-                    //Toast.makeText(getApplicationContext(),cursor.getString(cursor.getColumnIndex("NAME")),Toast.LENGTH_SHORT).show();
-                    String row = "";
-                    while (cursor.moveToNext()) {
-                        String name = cursor.getString(cursor.getColumnIndex("NAME"));
-                        int id = cursor.getInt(cursor.getColumnIndex("ID"));
-                        row = "ID is : " + id + "     Name is : " + name;
-                        Toast.makeText(getApplicationContext(), row, Toast.LENGTH_SHORT).show();
+                row = row + "ID is : " + id + "Tel is : " + tel + "CELL is : " + cell
+                        + "ADRESS is : " + adress + "MAIL is : " + mail + "JOB is : " + job + "\r\n";
 
-                    }
-                    database.close();
-                } catch (Exception ex) {
-                    Toast.makeText(getApplicationContext(), ex + "", Toast.LENGTH_SHORT).show();
-                }
+                planetList.add(row);
+
+
+                //Toast.makeText(getApplicationContext(), row, Toast.LENGTH_SHORT).show();
+
             }
-        });
+            database.close();
+            mainListView.setAdapter(listAdapter);
+        } catch (Exception ex) {
+            Toast.makeText(getApplicationContext(), ex + "", Toast.LENGTH_SHORT).show();
+        }
+        System.out.println("dfbgngfngf");
+
+
     }
-}
+});
+}}
