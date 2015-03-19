@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.mainproject.R;
 
-public class TabFragment2 extends Fragment {
+public class NewsFragment extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {

@@ -12,7 +12,7 @@ import com.example.mainproject.R;
 
 import java.util.ArrayList;
 
-public class TabFragment3 extends Fragment {
+public class SearchFragment extends Fragment {
     EditText searchbox;
     ListView mainListView;
     Button searchbutton;
@@ -21,12 +21,12 @@ public class TabFragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.search,
+        final View view1 = inflater.inflate(R.layout.search,
                 container, false);
 
 
-        searchbox = (EditText) view.findViewById(R.id.searchbox);
-        mainListView = (ListView) view.findViewById(R.id.list);
+        searchbox = (EditText) view1.findViewById(R.id.searchbox);
+        mainListView = (ListView) view1.findViewById(R.id.list);
 
         // Create and populate a List of planet names.
        /* String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
@@ -54,15 +54,15 @@ public class TabFragment3 extends Fragment {
         // Set the ArrayAdapter as the ListView's adapter.
         //  mainListView.setAdapter( listAdapter );
 //        System.out.println("hellooo");
-        searchbutton = (Button) view.findViewById(R.id.searchboxbutton);
+        searchbutton = (Button) view1.findViewById(R.id.searchboxbutton);
         searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
 
                     //System.out.println("HI-------   :   " + searchbox.getText().toString());
-                    SQLiteDatabase database = getActivity().openOrCreateDatabase("T1", getActivity().MODE_PRIVATE, null);
-                    Cursor cursor = database.rawQuery("SELECT ID,TEL,CELL,ADRESS,MAIL,JOB FROM T1 WHERE COMPANYNAME = " + searchbox.getText() + ";", null);
+                    SQLiteDatabase sqLiteDatabase = getActivity().openOrCreateDatabase("MOHAMMAD", getActivity().MODE_PRIVATE, null);
+                    Cursor cursor = sqLiteDatabase.rawQuery("SELECT ID,TEL,CELL,ADRESS,MAIL,JOB FROM T6 WHERE COMPANYNAME = " + searchbox.getText().toString() + ";", null);
                     //Cursor cursor = database.rawQuery("SELECT ID,NAME FROM T1 WHERE NAME = " + editTextName.getText().toString() +";", null);
                     //cursor.moveToNext();
                     //Toast.makeText(getApplicationContext(),cursor.getString(cursor.getColumnIndex("NAME")),Toast.LENGTH_SHORT).show();
@@ -73,8 +73,8 @@ public class TabFragment3 extends Fragment {
                         String job = cursor.getString(cursor.getColumnIndex("JOB"));
                         String mail = cursor.getString(cursor.getColumnIndex("MAIL"));
                         String adress = cursor.getString(cursor.getColumnIndex("ADRESS"));
-                        long tel = cursor.getLong(cursor.getColumnIndex("TEL"));
-                        long cell = cursor.getLong(cursor.getColumnIndex("CELL"));
+                        int tel = cursor.getInt(cursor.getColumnIndex("TEL"));
+                        int cell = cursor.getInt(cursor.getColumnIndex("CELL"));
 
 
                         row = row + "ID is : " + id + "Tel is : " + tel + "CELL is : " + cell
@@ -86,7 +86,7 @@ public class TabFragment3 extends Fragment {
                         //Toast.makeText(getApplicationContext(), row, Toast.LENGTH_SHORT).show();
 
                     }
-                    database.close();
+                    sqLiteDatabase.close();
                     mainListView.setAdapter(listAdapter);
                 } catch (Exception ex) {
                     //Toast.makeText(getActivity(), ex + "", Toast.LENGTH_SHORT).show();
@@ -96,7 +96,7 @@ public class TabFragment3 extends Fragment {
 
             }
         });
-        return view;
+        return view1;
 
     }
 }

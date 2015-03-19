@@ -51,8 +51,14 @@ public class MyActivity extends FragmentActivity {
         });
 
         Database database = new Database();
-        database.insert(1,"elenoon",66538653,935409692,"sattaarkhan","mfarahani31@yahoo.com","develop");
-        System.out.println("dfbdbgbsr");
+        try {
+
+            database.insert(1,"ali",65465,5468,"dfgt","dgbd","dgdb");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 /*
         search = (Button) findViewById(R.id.search);
         help = (Button) findViewById(R.id.help);

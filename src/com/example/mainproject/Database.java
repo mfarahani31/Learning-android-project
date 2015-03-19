@@ -1,6 +1,7 @@
 package com.example.mainproject;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,12 +14,13 @@ import android.widget.Toast;
  */
 public class Database extends Activity {
 
-    public void insert(int id,String companyname,long tel,long cell,String adress,String mail,String job){
-        try {
+    public void insert(int id,String companyname,int tel,int cell,String adress,String mail,String job){
 
-            SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("JOBS", MODE_PRIVATE, null);
-            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS T1(ID INT(3),COMPANYNAME VARCHAR,TEL INT(8),CELL INT(12),ADRESS VARCHAR," +
-                    "MAIL VARCHAR,JOB VARCHAR);");
+            //int id,String companyname,int tel,int cell,String adress,String mail,String job
+            SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("OKKK", MODE_PRIVATE, null);
+            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS T6(ID INTEGER(3),COMPANYNAME VARCHAR,TEL INT(8),CELL INT(12),ADRESS VARCHAR,MAIL VARCHAR,JOB VARCHAR);");
+            //sqLiteDatabase.execSQL("INSERT INTO T1 VALUES(1,'FARSHAD',454654,6844,'eetetg','httrhtr','thtrh');");
+
 
             ContentValues values = new ContentValues();
             values.put("ID", id);
@@ -29,12 +31,16 @@ public class Database extends Activity {
             values.put("MAIL", mail);
             values.put("JOB", job);
 
-            sqLiteDatabase.insert("T1", null, values);
-           // Toast.makeText(getApplicationContext(), "Row Insert", Toast.LENGTH_LONG).show();
-        } catch (Exception ex) {
-            //Toast.makeText(getApplicationContext(), ex + "", Toast.LENGTH_LONG).show();
-        }
-    }
+
+        sqLiteDatabase.insert("T1", null, values);
+          // sqLiteDatabase.close();
+
+            System.out.println("inserted");
+        } /*catch (Exception ex) {
+            System.out.println(ex);
+            System.out.println("not inserted");
+          */  // Toast.makeText(getApplicationContext(), ex + "", Toast.LENGTH_LONG).show();}
+
 
 
 

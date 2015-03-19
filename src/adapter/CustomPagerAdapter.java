@@ -3,11 +3,10 @@ package adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import com.example.mainproject.fragments.TabFragment1;
-import com.example.mainproject.fragments.TabFragment2;
-import com.example.mainproject.fragments.TabFragment3;
-import com.example.mainproject.fragments.TabFragment4;
+import com.example.mainproject.fragments.AboutFragment;
+import com.example.mainproject.fragments.NewsFragment;
+import com.example.mainproject.fragments.SearchFragment;
+import com.example.mainproject.fragments.HomeFragment;
 
 
 public class CustomPagerAdapter extends FragmentPagerAdapter {
@@ -24,13 +23,13 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
         int resId = 0;
         switch (position) {
             case 0:
-                return new TabFragment1();
+                return new AboutFragment();
             case 1:
-                return new TabFragment2();
+                return new NewsFragment();
             case 2:
-                return new TabFragment3();
+                return new SearchFragment();
             case 3:
-                return new TabFragment4();
+                return new HomeFragment();
             default:
                 throw new IllegalArgumentException("The item position should be less or equal to:" + PAGES);
 
